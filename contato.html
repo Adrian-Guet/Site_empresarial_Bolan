@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!-- lang="pt" ajuda leitores de tela e tradutores a identificar o idioma -->
+<html lang="pt">
+<head>
+
+<!-- Descrição que aparece nos resultados do Google -->
+<meta name="description" content="AcertaCred - [Descrição placeholder da página Contato e Localização]">
+<meta name="author" content="Adrian Guetner Florentina">
+<!-- Codificação de caracteres: sem isso, acentos podem quebrar -->
+<meta charset="utf-8">
+
+<!-- Liga o CSS e define os ícones da aba do navegador -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="shortcut icon" href="img/favicon.ico">
+<title>AcertaCred | Contato e Localização</title>
+<!-- Faz a página se adaptar a telas de celular -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+</head>
+
+
+<body>
+
+<!-- ===== CABEÇALHO (repetido em todas as páginas) ===== -->
+<header class="topo">
+  <!-- section aqui só agrupa logo + menu e limita a largura (.container) -->
+  <section class="container topo-conteudo">
+    <a class="logo" href="index.html">
+      <img src="img/LogoAcerta.png" alt="AcertaCred - logo" width="285" height="75">
+    </a>
+
+    <!-- Botão do menu mobile. aria-* informam o estado a leitores de tela;
+         o JS (principal.js) troca aria-expanded entre true/false -->
+    <button class="btn-menu" id="btn-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">&#9776;</button>
+
+    <!-- nav = bloco de links de navegação principal -->
+    <nav class="menu" id="menu-principal">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <!-- .ativo marca a página atual; aria-current avisa leitores de tela -->
+        <li><a href="contato.html" class="ativo" aria-current="page">Contato</a></li>
+      </ul>
+    </nav>
+  </section>
+</header>
+
+<!-- main = conteúdo principal, só pode existir um por página -->
+<main>
+
+  <!-- ===== FAIXA DE TÍTULO ===== -->
+  <section class="faixa-titulo">
+    <!-- header dentro de section = cabeçalho DESSA seção (título + breadcrumb) -->
+    <header class="container">
+      <h1>Contato e Localização</h1>
+      <!-- breadcrumb ("migalhas de pão") é navegação, então fica em nav -->
+      <nav aria-label="Você está em">
+        <p>Home &gt; Contato e Localização</p>
+      </nav>
+    </header>
+  </section>
+
+  <!-- ===== CONTATO E LOCALIZAÇÃO ===== -->
+  <section class="secao">
+    <!-- Wrapper das duas colunas (container + grid na mesma tag) -->
+    <section class="container duas-colunas alinhar-topo">
+
+      <!-- Coluna 1: canais de contato -->
+      <article>
+        <h2>Nossos canais</h2>
+        <p>Fale com a AcertaCred pelos canais abaixo. Lorem ipsum dolor sit amet.</p>
+
+        <!-- address = informação de contato (telefone, e-mail, horário) -->
+        <address>
+          <ul class="info-contato">
+            <li><strong>Telefone</strong>(00) 0000-0000</li>
+            <li><strong>E-mail</strong>contato@exemplo.com.br</li>
+            <li><strong>Horário de atendimento</strong>Segunda a sexta, 00h às 00h</li>
+          </ul>
+        </address>
+
+        <ul class="redes">
+          <!-- _blank abre em nova aba; rel="noopener" evita que a página aberta
+               controle a sua (segurança) -->
+          <li><a href="https://instagram.com.br" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </article>
+
+      <!-- Coluna 2: endereço e mapa -->
+      <article>
+        <h2>Localização</h2>
+        <address>
+          Rua Exemplo, 000 - Bairro<br>Cidade/UF - 00000-000
+        </address>
+
+        <!-- alt descreve a imagem para leitores de tela e para quando ela não carrega -->
+        <img class="mapa-placeholder" src="img/mapa-placeholder.svg" alt="Mapa com a localização da AcertaCred">
+      </article>
+
+    </section>
+  </section>
+
+</main>
+
+<!-- ===== RODAPÉ (repetido em todas as páginas) ===== -->
+<footer class="rodape">
+
+  <!-- Três colunas do rodapé -->
+  <section class="container rodape-colunas">
+
+    <!-- Coluna 1: logo e frase da empresa -->
+    <article>
+      <a class="logo" href="index.html">
+        <img src="img/LogoAcerta.png" alt="AcertaCred" width="300" height="100">
+      </a>
+      <p>Frase curta sobre a empresa. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </article>
+
+    <!-- Coluna 2: mapa do site é navegação, então nav -->
+    <nav aria-label="Mapa do site">
+      <h3>Mapa do site</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Coluna 3: contato -->
+    <address>
+      <h3>Fale conosco</h3>
+      <ul>
+        <li>(00) 0000-0000</li>
+        <li>contato@exemplo.com.br</li>
+        <li>Rua Exemplo, 000 - Cidade/UF</li>
+      </ul>
+    </address>
+
+  </section>
+
+  <!-- Aviso legal e copyright -->
+  <section class="container rodape-legal">
+    <p>[Texto legal placeholder: aqui entra o aviso legal da AcertaCred, explicando o tipo de atuação da empresa e as condições de contratação.]</p>
+    <p>AcertaCred 2026 - CNPJ 39.617.712/0001-90 - Todos os direitos reservados.</p>
+  </section>
+
+</footer>
+
+<!-- JS no final do body: o HTML carrega primeiro, o script depois -->
+<script src="js/principal.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#dfe9f3"/>
+  <circle cx="580" cy="170" r="48" fill="#b5c8dc"/>
+  <path d="M80 470 L300 220 L430 360 L540 260 L720 470 Z" fill="#b5c8dc"/>
+  <text x="400" y="545" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#4a5f75">Imagem da empresa (800 x 600)</text>
+</svg>

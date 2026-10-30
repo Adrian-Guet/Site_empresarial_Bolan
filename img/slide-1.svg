@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12355b"/>
+      <stop offset="1" stop-color="#1b6a8f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="500" fill="url(#g)"/>
+  <circle cx="980" cy="120" r="160" fill="#ffffff" opacity="0.06"/>
+  <circle cx="1080" cy="380" r="110" fill="#1fa97a" opacity="0.25"/>
+  <text x="600" y="110" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="bold" fill="#ffffff" opacity="0.9">IMAGEM DO SLIDE 1</text>
+  <text x="600" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#ffffff" opacity="0.75">Placeholder 1200 x 500 px</text>
+</svg>

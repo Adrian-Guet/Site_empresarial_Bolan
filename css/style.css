@@ -1,0 +1,302 @@
+
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Fundo escuro, texto branco, fonte sem serifa.
+   line-height 1.6 = altura de linha 1,6x o tamanho da fonte (leitura confortável). */
+body { background: #150b2e; color: #fff; font-family: Arial, sans-serif; line-height: 1.6; }
+
+/* max-width 100% -> imagem nunca passa da largura do pai (não estoura no celular).
+   display: block -> tira o pequeno espaço que o navegador deixa embaixo de imagens. */
+img { max-width: 100%; display: block; }
+
+/* Links herdam a cor do texto ao redor e perdem o sublinhado. */
+a { color: inherit; text-decoration: none; }
+/* Listas sem bolinhas (as que precisarem, voltam a ter mais abaixo). */
+ul { list-style: none; }
+
+/* Como o reset zerou todas as margens, devolvemos 10px embaixo
+   de títulos e parágrafos para não ficarem colados. */
+h1, h2, h3, p { margin-bottom: 10px; }
+
+/* Botões não herdam a fonte sozinhos; "font: inherit" resolve.
+   Fica sem fundo e sem borda, com cursor de mãozinha. */
+button { font: inherit; color: #fff; background: none; border: none; cursor: pointer; }
+
+/* Limita a largura do conteúdo a 1100px e centraliza (margin: 0 auto).
+   padding de 16px nas laterais evita o texto colar na borda da tela. */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+
+/* =====================================================
+   2. REGRAS COMPARTILHADAS
+   Aqui ficam agrupados só os elementos que compartilham
+   exatamente o mesmo visual ou comportamento.
+   ===================================================== */
+
+/* ---------- CAIXAS COM BORDA VERDE ---------- */
+.card, .faq-item {
+  padding: 20px;                 /* espaço entre a borda e o conteúdo */
+  border: 1px solid #199c3c;     /* 1px de espessura, linha contínua, verde */
+}
+
+/* ---------- LAYOUT LADO A LADO (Flexbox) ----------
+   display: flex  -> filhos diretos ficam em linha
+   flex-wrap      -> se não couberem, quebram para a linha de baixo
+   gap            -> espaço entre os filhos */
+.topo-conteudo, .menu ul, .cards, .duas-colunas, .rodape-colunas, .redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* ---------- LARGURA DAS COLUNAS ----------
+   flex: 1 1 240px = "crescer 1 | encolher 1 | tamanho ideal 240px".
+   Na prática: cada coluna quer 240px, divide o espaço que sobrar
+   igualmente e, se não couber, quebra de linha sozinha.
+   ".duas-colunas > *" = qualquer filho DIRETO de .duas-colunas.
+   ".rodape-colunas > *" = idem no rodapé (article, nav e address). */
+.col-3, .duas-colunas > *, .rodape-colunas > * { flex: 1 1 240px; }
+.col-4 { flex: 1 1 140px; }   /* colunas menores (os 4 indicadores) */
+
+
+/* =====================================================
+   3. COMPONENTES
+   ===================================================== */
+
+/* ---------- SEÇÕES (blocos da página) ---------- */
+
+/* Espaço de 40px em cima/baixo. Agrupados porque o espaçamento é o mesmo. */
+.secao, .faixa-titulo, .chamada { padding: 40px 0; }
+
+/* Fundo levemente mais claro (branco com 6% de opacidade),
+   para separar visualmente uma seção da outra. */
+.secao-suave, .secao-escura { background: rgba(255, 255, 255, 0.06); }
+
+/* Título da seção, centralizado e em verde */
+.titulo-secao { color: #199c3c; text-align: center; }
+
+/* Subtítulo centralizado, com 30px de espaço antes do conteúdo */
+.subtitulo-secao { text-align: center; margin-bottom: 30px; }
+
+/* Utilitário: qualquer elemento com class="centro" fica centralizado */
+.centro { text-align: center; }
+
+
+/* ---------- CABEÇALHO (.topo) ---------- */
+
+/* Linha verde embaixo do cabeçalho */
+.topo { border-bottom: 3px solid #199c3c; }
+
+/* Logo à esquerda, menu à direita (space-between);
+   align-items: center -> alinha os dois na vertical */
+.topo-conteudo { justify-content: space-between; align-items: center; padding-top: 10px; padding-bottom: 10px; }
+
+/* Altura fixa de 75px; width: auto mantém a proporção da imagem */
+.logo img { height: 75px; width: auto; }
+
+/* Botão hambúrguer: escondido no desktop, aparece no celular (ver @media) */
+.btn-menu { display: none; width: 44px; height: 44px; border: 1px solid #fff; font-size: 1.4rem; }
+
+
+/* ---------- MENU ---------- */
+
+.menu a { font-weight: bold; }
+
+/* ".menu .ativo" (com ESPAÇO) = elemento .ativo DENTRO de .menu.
+   Destaca a página atual em verde. */
+.menu .ativo { color: #199c3c; }
+
+
+/* ---------- BOTÃO ---------- */
+
+/* inline-block -> fica do tamanho do texto, mas aceita padding.
+   Fundo verde com texto escuro, para dar contraste. */
+.btn { display: inline-block; padding: 10px 24px; background: #199c3c; color: #150b2e; font-weight: bold; }
+
+
+/* ---------- CARROSSEL ---------- */
+
+/* position: relative -> serve de "âncora" para os elementos
+   position: absolute lá dentro (setas, pontos, texto).
+   overflow: hidden -> esconde os slides que estão fora da tela. */
+.carrossel { position: relative; overflow: hidden; }
+
+/* Os slides ficam em linha; o JS desliza o trilho com transform.
+   transition: 0.6s -> o movimento é animado em vez de instantâneo. */
+.carrossel-trilho { display: flex; transition: transform 0.6s; }
+
+/* Cada slide ocupa 100% da largura (flex: 0 0 100% = não cresce, não encolhe) */
+.slide { position: relative; flex: 0 0 100%; height: 500px; }
+
+/* object-fit: cover -> a imagem preenche o espaço, cortando o excesso
+   em vez de deformar */
+.slide img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Texto do slide colado na parte de baixo, sobre a imagem
+   (left/right/bottom: 0 = esticado de ponta a ponta, rente ao fundo).
+   O fundo é o roxo com 80% de opacidade, para o texto ficar legível. */
+.slide-texto {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px 70px 40px;      /* cima | lados | baixo (70px nas laterais dá espaço às setas) */
+  background: rgba(21, 11, 46, 0.8);
+}
+
+.slide-texto h1, .slide-texto h2 { font-size: 2rem; }
+
+/* Setas: top 50% leva ao meio; margin-top negativo (metade da altura)
+   corrige o centro exato. */
+.carrossel-btn {
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  color: #150b2e;
+}
+
+.anterior { left: 10px; }
+.proximo { right: 10px; }
+
+/* Bolinhas indicadoras, centralizadas embaixo */
+.carrossel-pontos {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ponto { width: 12px; height: 12px; border: 2px solid #fff; }
+
+/* ".ponto.ativo" (SEM espaço) = elemento que tem as duas classes ao mesmo tempo.
+   O ponto do slide atual fica preenchido. */
+.ponto.ativo { background: #fff; }
+
+
+/* ---------- CARDS ---------- */
+
+/* Card com imagem em cima: tira o padding para a imagem encostar nas bordas
+   (o espaço interno passa para .card-corpo) */
+.card-img { padding: 0; }
+.card-img img { width: 100%; height: 200px; object-fit: cover; }
+.card-corpo { padding: 20px; }
+
+/* Lista dentro do card volta a ter bolinhas (disc) e recuo de 20px */
+.card-corpo ul { list-style: disc; margin: 0 0 10px 20px; }
+
+
+/* ---------- INDICADORES E PASSOS ("Nossos números", "Como funciona") ---------- */
+
+.indicador { text-align: center; }
+
+/* Mesmo visual para os dois: número grande, verde, em linha própria.
+   display: block faz o texto seguinte ir para baixo.
+   rem = múltiplo do tamanho de fonte base (2rem = 2x). */
+.numero-passo, .indicador strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #199c3c;
+}
+
+
+/* ---------- DEPOIMENTOS ---------- */
+
+/* margin: 0 auto 10px -> centraliza a imagem (auto nas laterais) */
+.avatar { width: 72px; height: 72px; margin: 0 auto 10px; }
+.estrelas { color: #199c3c; }
+.autor { display: block; font-weight: bold; }
+
+
+/* ---------- FAQ (perguntas frequentes) ---------- */
+
+.faq { max-width: 800px; margin: 0 auto; }
+.faq-item { margin-bottom: 10px; }
+.faq-pergunta { width: 100%; text-align: left; font-weight: bold; }
+
+/* Resposta escondida por padrão; o JS adiciona a classe "aberto" no
+   .faq-item ao clicar. Esse seletor (".faq-item.aberto .faq-resposta")
+   só vale quando o item está aberto, e então mostra a resposta. */
+.faq-resposta { display: none; margin-top: 10px; }
+.faq-item.aberto .faq-resposta { display: block; }
+
+
+/* ---------- FAIXA DE TÍTULO E CHAMADA FINAL ---------- */
+
+/* Faixa de título das páginas internas: texto centralizado, linha verde embaixo */
+.faixa-titulo { text-align: center; border-bottom: 3px solid #199c3c; }
+
+/* Chamada final: texto centralizado, linha verde em cima */
+.chamada { text-align: center; border-top: 3px solid #199c3c; }
+
+
+/* ---------- CONTATO ---------- */
+
+.duas-colunas { align-items: flex-start; }   /* colunas alinhadas pelo topo */
+
+/* Rótulo (Telefone, E-mail...) em verde, em linha própria acima do valor */
+.info-contato strong { display: block; color: #199c3c; }
+.info-contato li { margin-bottom: 12px; }
+
+/* <address> vem em itálico por padrão; aqui voltamos ao normal */
+address { font-style: normal; }
+
+/* Imagem do mapa: ocupa a largura da coluna, altura fixa de 300px.
+   object-fit: cover -> preenche o espaço sem deformar. */
+.mapa-placeholder {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-top: 16px;
+  border: 1px solid #199c3c;
+}
+
+
+/* ---------- RODAPÉ ---------- */
+
+.rodape { padding-top: 30px; border-top: 3px solid #199c3c; }
+.rodape-colunas { margin-bottom: 20px; }
+
+/* Aviso legal: linha clara em cima, texto menor.
+   Só padding vertical, para não anular o padding lateral do .container. */
+.rodape-legal { padding-top: 16px; padding-bottom: 16px; border-top: 1px solid rgba(255, 255, 255, 0.3); font-size: 0.8rem; }
+
+
+/* =====================================================
+   4. CELULAR (telas com até 768px de largura)
+   Tudo aqui dentro só vale em telas pequenas.
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  /* Mostra o botão hambúrguer */
+  .btn-menu { display: block; }
+
+  /* Menu escondido por padrão; o JS adiciona a classe "aberto" ao clicar.
+     width: 100% faz o menu ocupar a linha inteira, abaixo da logo.
+     (Confira no principal.js se a classe usada é mesmo "aberto".) */
+  .menu { display: none; width: 100%; }
+  .menu.aberto { display: block; }
+
+  /* Links empilhados, um embaixo do outro, com linha separadora */
+  .menu ul { flex-direction: column; gap: 0; }
+  .menu a { display: block; padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, 0.2); }
+
+  /* Logo menor para caber ao lado do botão */
+  .logo img { height: 50px; }
+
+  /* Carrossel mais baixo e com texto menor */
+  .slide { height: 400px; }
+  .slide-texto { padding: 16px 50px 36px; }   /* 50px nas laterais para não ficar sob as setas */
+  .slide-texto h1, .slide-texto h2 { font-size: 1.4rem; }
+
+  /* Mapa mais baixo */
+  .mapa-placeholder { height: 220px; }
+}

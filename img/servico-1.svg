@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#dfe9f3"/>
+  <circle cx="440" cy="120" r="34" fill="#b5c8dc"/>
+  <path d="M60 320 L220 160 L320 260 L400 190 L540 320 Z" fill="#b5c8dc"/>
+  <text x="300" y="365" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#4a5f75">Imagem do serviço 1 (600 x 400)</text>
+</svg>
