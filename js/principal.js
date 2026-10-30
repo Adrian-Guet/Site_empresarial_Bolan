@@ -1,16 +1,19 @@
-// ----- FAQ -----
-// Pega todos os botões de pergunta da página
 
+//bora Bolan
+//aqui quando inicia o site, ele lê todos faq pergunta e adiciona na perguntas
 const perguntas = document.querySelectorAll('.faq-pergunta');
 
+
+//essa funcao é chamada dentro da função abaixo
 function alternarResposta(botao) {
   const item = botao.parentElement;
   const aberto = item.classList.toggle('aberto');
   botao.setAttribute('aria-expanded', aberto);
 }
 
+//pra cada pergunta, chama a função ao clicar
 perguntas.forEach(function (botao) {
-  botao.addEventListener('click', function () {
+  botao.addEventListener('click', function () {//fica escutando, se "escutar" um click, chama a funcao generica, que chama a alternarResposta
     alternarResposta(botao);
   });
 });
