@@ -1,16 +1,17 @@
 // ----- FAQ -----
 // Pega todos os botões de pergunta da página
+
 const perguntas = document.querySelectorAll('.faq-pergunta');
 
-perguntas.forEach(function (botao) {
-  // Ao clicar em uma pergunta...
-  botao.addEventListener('click', function () {
-    // ...o pai do botão (.faq-item) ganha ou perde a classe "aberto"
-    const item = botao.parentElement;
-    const aberto = item.classList.toggle('aberto');
+function alternarResposta(botao) {
+  const item = botao.parentElement;
+  const aberto = item.classList.toggle('aberto');
+  botao.setAttribute('aria-expanded', aberto);
+}
 
-    // Avisa leitores de tela se está expandido (true) ou não (false)
-    botao.setAttribute('aria-expanded', aberto);
+perguntas.forEach(function (botao) {
+  botao.addEventListener('click', function () {
+    alternarResposta(botao);
   });
 });
 
