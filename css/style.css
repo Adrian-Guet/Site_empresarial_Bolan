@@ -2,48 +2,32 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* Fundo escuro, texto branco, fonte sem serifa.
-   line-height 1.6 = altura de linha 1,6x o tamanho da fonte (leitura confortável). */
+
 body { background: #150b2e; color: #fff; font-family: Arial, sans-serif; line-height: 1.6; }
 
-/* max-width 100% -> imagem nunca passa da largura do pai (não estoura no celular).
-   display: block -> tira o pequeno espaço que o navegador deixa embaixo de imagens. */
 img { max-width: 100%; display: block; }
 
-/* Links herdam a cor do texto ao redor e perdem o sublinhado. */
 a { color: inherit; text-decoration: none; }
-/* Listas sem bolinhas (as que precisarem, voltam a ter mais abaixo). */
+
 ul { list-style: none; }
 
-/* Como o reset zerou todas as margens, devolvemos 10px embaixo
-   de títulos e parágrafos para não ficarem colados. */
 h1, h2, h3, p { margin-bottom: 10px; }
 
-/* Botões não herdam a fonte sozinhos; "font: inherit" resolve.
-   Fica sem fundo e sem borda, com cursor de mãozinha. */
-button { font: inherit; color: #fff; background: none; border: none; cursor: pointer; }
 
-/* Limita a largura do conteúdo a 1100px e centraliza (margin: 0 auto).
-   padding de 16px nas laterais evita o texto colar na borda da tela. */
+
+button { font: inherit; color: #fff; background: none; border: none; cursor: pointer; }/*cursor pointer, vira mãozinha*/
+
 .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
 
 
-/* =====================================================
-   2. REGRAS COMPARTILHADAS
-   Aqui ficam agrupados só os elementos que compartilham
-   exatamente o mesmo visual ou comportamento.
-   ===================================================== */
 
-/* ---------- CAIXAS COM BORDA VERDE ---------- */
+
 .card, .faq-item {
-  padding: 20px;                 /* espaço entre a borda e o conteúdo */
+  padding: 20px;              
   border: 1px solid #199c3c;     /* 1px de espessura, linha contínua, verde */
 }
 
-/* ---------- LAYOUT LADO A LADO (Flexbox) ----------
-   display: flex  -> filhos diretos ficam em linha
-   flex-wrap      -> se não couberem, quebram para a linha de baixo
-   gap            -> espaço entre os filhos */
+
 .topo-conteudo, .menu ul, .cards, .duas-colunas, .rodape-colunas, .redes {
   display: flex;
   flex-wrap: wrap;
@@ -56,50 +40,40 @@ button { font: inherit; color: #fff; background: none; border: none; cursor: poi
    igualmente e, se não couber, quebra de linha sozinha.
    ".duas-colunas > *" = qualquer filho DIRETO de .duas-colunas.
    ".rodape-colunas > *" = idem no rodapé (article, nav e address). */
-.col-3, .duas-colunas > *, .rodape-colunas > * { flex: 1 1 240px; }
+.col-3, .duas-colunas > *, .rodape-colunas > * { flex: 1 1 240px; }/* 1 1 diz que a pode crescer e pode encolher*/
 .col-4 { flex: 1 1 140px; }   /* colunas menores (os 4 indicadores) */
 
 
-/* =====================================================
-   3. COMPONENTES
-   ===================================================== */
 
-/* ---------- SEÇÕES (blocos da página) ---------- */
 
-/* Espaço de 40px em cima/baixo. Agrupados porque o espaçamento é o mesmo. */
+
 .secao, .faixa-titulo, .chamada { padding: 40px 0; }
 
 /* Fundo levemente mais claro (branco com 6% de opacidade),
    para separar visualmente uma seção da outra. */
 .secao-suave, .secao-escura { background: rgba(255, 255, 255, 0.06); }
 
-/* Título da seção, centralizado e em verde */
+/* Título da seção depoimentos*/
 .titulo-secao { color: #199c3c; text-align: center; }
 
-/* Subtítulo centralizado, com 30px de espaço antes do conteúdo */
+
 .subtitulo-secao { text-align: center; margin-bottom: 30px; }
 
-/* Utilitário: qualquer elemento com class="centro" fica centralizado */
+
 .centro { text-align: center; }
 
 
-/* ---------- CABEÇALHO (.topo) ---------- */
 
-/* Linha verde embaixo do cabeçalho */
-.topo { border-bottom: 3px solid #199c3c; }
-
-/* Logo à esquerda, menu à direita (space-between);
-   align-items: center -> alinha os dois na vertical */
 .topo-conteudo { justify-content: space-between; align-items: center; padding-top: 10px; padding-bottom: 10px; }
 
-/* Altura fixa de 75px; width: auto mantém a proporção da imagem */
 .logo img { height: 75px; width: auto; }
 
 /* Botão hambúrguer: escondido no desktop, aparece no celular (ver @media) */
 .btn-menu { display: none; width: 44px; height: 44px; border: 1px solid #fff; font-size: 1.4rem; }
 
 
-/* ---------- MENU ---------- */
+
+
 
 .menu a { font-weight: bold; }
 
