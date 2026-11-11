@@ -7,24 +7,24 @@ body { background: #150b2e; color: #fff; font-family: Arial, sans-serif; line-he
 /* Todas as imagens: logos, carrossel, serviços, fachada e avatares. */
 img { max-width: 100%; display: block; }
 
-/* Todos os links: menu, botões de navegação, Instagram, WhatsApp e rodapé. */
+/* Todos os links: menu, home, serviços, etc. botões de navegação, Instagram, WhatsApp e rodapé. */
 a { color: inherit; text-decoration: none; }
 
-/* Todas as listas: menu, serviços, contato e mapa do site. */
+/* Todas as listas: Fale conosco, telefone, horario de atendimento e textinhos/lista do  card */
 ul { list-style: none; }
 
 /* Todos os títulos h1, h2, h3 e parágrafos de todas as páginas. */
+/*TODOS OS TEXTOS, exceto links e titulo de duvidas frequentes */
 h1, h2, h3, p { margin-bottom: 10px; }
 
-/* Todos os botões: menu mobile, setas do carrossel e perguntas do FAQ. */
+/* Listinha do mobile e titulo duvidas frequentes. */
 button { font: inherit; color: #fff; background: none; border: none; cursor: pointer; }
 
-/* Todas as áreas de conteúdo: cabeçalho, seções, páginas internas e rodapé. */
+/* cliente 1 2 e 3, localização do contato e localização. */
 .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
 
 
-/* Cards da Home (benefícios, etapas e depoimentos), Serviços e Sobre.
-   Também se aplica aos itens de perguntas frequentes da página Serviços. */
+/* Cards da Home (benefícios, etapas e depoimentos), Serviços e Sobre, etc */
 .card, .faq-item {
   padding: 20px;
   border: 1px solid #199c3c;
@@ -32,12 +32,7 @@ button { font: inherit; color: #fff; background: none; border: none; cursor: poi
 
 
 /* Organização Flexbox:
-   - .topo-conteudo: logo e menu de todas as páginas.
-   - .menu ul: links Home, Sobre, Serviços e Contato.
-   - .cards: todos os grupos de cards.
-   - .duas-colunas: Quem somos/fachada e Nossos canais/Localização.
-   - .rodape-colunas: logo, mapa do site e informações de contato.
-   - .redes: links do Instagram e WhatsApp na página Contato. */
+  fundo de tudo, fundo do topo, fundo do rodapé, etc*/
 .topo-conteudo, .menu ul, .cards, .duas-colunas, .rodape-colunas, .redes {
   display: flex;
   flex-wrap: wrap;
@@ -45,84 +40,68 @@ button { font: inherit; color: #fff; background: none; border: none; cursor: poi
 }
 
 
-/* Largura dos cards, colunas de conteúdo e colunas do rodapé.
-   - .col-3: benefícios, etapas, depoimentos, serviços e valores.
-   - .duas-colunas: conteúdo das páginas Sobre e Contato.
-   - .rodape-colunas: três colunas do rodapé. */
+/* Largura dos cards e das colunas: benefícios, etapas, depoimentos, serviços, valores, Sobre, Contato e rodapé. */
 .col-3, .duas-colunas > *, .rodape-colunas > * { flex: 1 1 240px; }
 
-/* Classe preparada para colunas menores; não aparece nos HTML enviados. */
+/* Coluna menor, não aparece em nenhum HTML. */
 .col-4 { flex: 1 1 140px; }
 
 
-/* Espaçamento vertical das seções principais, faixas de título
-   e chamadas finais de todas as páginas. */
+/* Espaço de cima e de baixo das seções, faixas de título e chamadas finais. */
 .secao, .faixa-titulo, .chamada { padding: 40px 0; }
 
-/* Fundo das seções de depoimentos (Home) e dúvidas frequentes (Serviços).
-   .secao-escura está disponível, mas não é utilizada nos HTML enviados. */
+/* Fundo dos depoimentos (Home) e dúvidas frequentes (Serviços). O .secao-escura não é usado. */
 .secao-suave, .secao-escura { background: rgba(255, 255, 255, 0.06); }
 
-/* Títulos: Por que escolher a AcertaCred, Como funciona,
-   O que dizem nossos clientes, Soluções para você,
-   Dúvidas frequentes e O que nos move. */
+/* Títulos das seções: Por que escolher a AcertaCred, Como funciona, O que dizem nossos clientes,
+   Soluções para você, Dúvidas frequentes e O que nos move. */
 .titulo-secao { color: #199c3c; text-align: center; }
 
-/* Subtítulos que aparecem abaixo dos títulos das seções da Home,
-   Serviços e Sobre. */
+/* Textinho embaixo dos títulos das seções da Home, Serviços e Sobre. */
 .subtitulo-secao { text-align: center; margin-bottom: 30px; }
 
-/* Centralização dos textos dos cards de benefícios, etapas e depoimentos
-   da Home e dos cards de valores da página Sobre. */
+/* Texto centralizado dos cards de benefícios, etapas, depoimentos e valores. */
 .centro { text-align: center; }
 
 
-/* Cabeçalho de todas as páginas: organiza a logo e o menu de navegação. */
+/* Topo de todas as páginas: logo e menu. */
 .topo-conteudo { justify-content: space-between; align-items: center; padding-top: 10px; padding-bottom: 10px; }
 
-/* Logo da AcertaCred presente no cabeçalho e no rodapé de todas as páginas. */
+/* Logo do topo e do rodapé. */
 .logo img { height: 75px; width: auto; }
 
-/* Botão hambúrguer do menu mobile presente no cabeçalho de todas as páginas. */
+/* Botão da listinha (hambúrguer) do topo no mobile. */
 .btn-menu { display: none; width: 44px; height: 44px; border: 1px solid #fff; font-size: 1.4rem; }
 
 
-/* Links Home, Sobre, Serviços e Contato do menu principal de todas as páginas. */
+/* Links do menu: Home, Sobre, Serviços e Contato. */
 .menu a { font-weight: bold; }
 
-/* Destaca em verde a página atual:
-   Home, Sobre, Serviços ou Contato. */
+/* Página atual do menu, em verde. */
 .menu .ativo { color: #199c3c; }
 
 
-/* ---------- BOTÕES ---------- */
 
-/* Todos os links com aparência de botão:
-   - Home: Simule agora, Conheça os serviços, Quem somos e Fale com a AcertaCred.
-   - Serviços: três botões Saiba mais e Fale com a AcertaCred.
-   - Sobre: Fale com a AcertaCred. */
+
+/* Todos os botões verdes: Simule agora, Conheça os serviços, Quem somos, Saiba mais, Fale com a AcertaCred, etc. */
 .btn { display: inline-block; padding: 10px 24px; background: #199c3c; color: #150b2e; font-weight: bold; }
 
 
-/* ---------- CARROSSEL ---------- */
 
-/* Área principal do carrossel da Home, contendo imagens, textos,
-   setas de navegação e bolinhas indicadoras. */
+
+/* Carrossel da Home: imagens, textos, setas e bolinhas. */
 .carrossel { position: relative; overflow: hidden; }
 
-/* Trilho que contém os três slides da Home:
-   AcertaCred, Serviços e Quem somos. */
+/* Trilho que segura os 3 slides: AcertaCred, Serviços e Quem somos. */
 .carrossel-trilho { display: flex; transition: transform 0.6s; }
 
-/* Cada um dos três slides do carrossel da Home. */
+/* Cada slide do carrossel da Home. */
 .slide { position: relative; flex: 0 0 100%; height: 500px; }
 
-/* Imagens dos três slides do carrossel da Home:
-   slide 1.png, slide 2.png e slide 3.png. */
+/* Imagens dos slides: slide 1.png, slide 2.png e slide 3.png. */
 .slide img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Área de texto sobre as imagens do carrossel:
-   títulos AcertaCred, Serviços e Quem somos, descrições e botões. */
+/* Caixa de texto em cima da imagem do slide: título, descrição e botão. */
 .slide-texto {
   position: absolute;
   left: 0;
@@ -132,10 +111,10 @@ button { font: inherit; color: #fff; background: none; border: none; cursor: poi
   background: rgba(21, 11, 46, 0.8);
 }
 
-/* Títulos AcertaCred, Serviços e Quem somos dentro dos slides da Home. */
+/* Títulos dos slides: AcertaCred, Serviços e Quem somos. */
 .slide-texto h1, .slide-texto h2 { font-size: 2rem; }
 
-/* Setas de navegação anterior e próximo do carrossel da Home. */
+/* Setas do carrossel (voltar e avançar). */
 .carrossel-btn {
   position: absolute;
   top: 50%;
@@ -146,13 +125,13 @@ button { font: inherit; color: #fff; background: none; border: none; cursor: poi
   color: #150b2e;
 }
 
-/* Seta para voltar ao slide anterior do carrossel da Home. */
+/* Seta de voltar slide. */
 .anterior { left: 10px; }
 
-/* Seta para avançar ao próximo slide do carrossel da Home. */
+/* Seta de avançar slide. */
 .proximo { right: 10px; }
 
-/* Área que contém as três bolinhas indicadoras dos slides da Home. */
+/* Área das bolinhas embaixo do carrossel. */
 .carrossel-pontos {
   position: absolute;
   left: 0;
@@ -163,41 +142,35 @@ button { font: inherit; color: #fff; background: none; border: none; cursor: poi
   gap: 8px;
 }
 
-/* Bolinhas indicadoras dos três slides do carrossel da Home. */
+/* Bolinhas dos slides. */
 .ponto { width: 12px; height: 12px; border: 2px solid #fff; }
 
-/* Bolinha que indica qual slide está sendo exibido atualmente na Home. */
+/* Bolinha do slide que está aparecendo. */
 .ponto.ativo { background: #fff; }
 
 
-/* ---------- CARDS ---------- */
 
-/* Cards com imagens da página Serviços:
-   Crédito consignado, Crédito do trabalhador e Crédito pessoal.
-   Remove o espaçamento interno para a imagem encostar nas bordas. */
+
+/* Cards com imagem da página Serviços: Crédito consignado, do trabalhador e pessoal.
+   Tira o espaço de dentro pra imagem encostar nas bordas. */
 .card-img { padding: 0; }
 
-/* Imagens dos três cards de serviços da página Serviços. */
+/* Imagens dos 3 cards de serviços. */
 .card-img img { width: 100%; height: 200px; object-fit: cover; }
 
-/* Conteúdo interno dos cards de serviços:
-   título, descrição, lista de características e botão Saiba mais. */
+/* Texto de dentro dos cards de serviços: título, descrição, lista e botão Saiba mais. */
 .card-corpo { padding: 20px; }
 
-/* Listas de características dos três serviços:
-   Crédito consignado, Crédito do trabalhador e Crédito pessoal.
-   Adiciona novamente as bolinhas que foram removidas da configuração geral. */
+/* Lista dos cards de serviços. Volta as bolinhas que foram tiradas lá no ul geral. */
 .card-corpo ul { list-style: disc; margin: 0 0 10px 20px; }
 
 
-/* ---------- INDICADORES E PASSOS ---------- */
 
-/* Classe preparada para centralizar indicadores numéricos.
-   Não aparece nos HTML enviados atualmente. */
+
+/* Centraliza números/indicadores. Não aparece em nenhum HTML. */
 .indicador { text-align: center; }
 
-/* Números 1, 2 e 3 dos cards da seção "Como funciona" na Home.
-   Também formata números em negrito dentro de elementos .indicador. */
+/* Números 1, 2 e 3 do "Como funciona" na Home. */
 .numero-passo, .indicador strong {
   display: block;
   font-size: 2rem;
@@ -206,72 +179,59 @@ button { font: inherit; color: #fff; background: none; border: none; cursor: poi
 }
 
 
-/* ---------- DEPOIMENTOS ---------- */
 
-/* Imagens dos três clientes nos cards de depoimentos da Home. */
+
+/* Fotos dos clientes nos depoimentos da Home. */
 .avatar { width: 72px; height: 72px; margin: 0 auto 10px; }
 
-/* Estrelas de avaliação dos três depoimentos da Home. */
+/* Estrelas dos depoimentos. */
 .estrelas { color: #199c3c; }
 
-/* Identificação dos autores dos depoimentos: Cliente 1, Cliente 2 e Cliente 3. */
+/* Nome de quem deu o depoimento: Cliente 1, 2 e 3. */
 .autor { display: block; font-weight: bold; }
 
 
-/* ---------- FAQ (PERGUNTAS FREQUENTES) ---------- */
 
-/* Área que contém as cinco perguntas frequentes da página Serviços. */
+
+/* Área das 5 perguntas frequentes da página Serviços. */
 .faq { max-width: 800px; margin: 0 auto; }
 
-/* Cada um dos cinco blocos de perguntas e respostas da página Serviços. */
+/* Cada pergunta com a sua resposta. */
 .faq-item { margin-bottom: 10px; }
 
-/* Botões com as perguntas:
-   Como solicitar empréstimo, quem pode contratar consignado,
-   valor mínimo, prazo para receber e contratação estando negativado. */
+/* Botões das perguntas: Como solicitar empréstimo, quem pode contratar, valor mínimo, prazo e negativado. */
 .faq-pergunta { width: 100%; text-align: left; font-weight: bold; }
 
-/* Respostas das cinco perguntas frequentes da página Serviços.
-   Permanecem escondidas até o visitante clicar na pergunta. */
+/* Respostas das perguntas. Ficam escondidas até clicar na pergunta. */
 .faq-resposta { display: none; margin-top: 10px; }
 
-/* Exibe a resposta quando o JavaScript adiciona a classe .aberto
-   ao item correspondente do FAQ na página Serviços. */
+/* Mostra a resposta quando o JavaScript coloca a classe .aberto na pergunta. */
 .faq-item.aberto .faq-resposta { display: block; }
 
 
-/* ---------- FAIXA DE TÍTULO E CHAMADA FINAL ---------- */
 
-/* Faixa superior das páginas internas:
-   "Sobre a AcertaCred", "Nossos serviços" e "Contato e Localização". */
+/* Faixa de título do topo das páginas: "Sobre a AcertaCred", "Nossos serviços" e "Contato e Localização". */
 .faixa-titulo { text-align: center; border-bottom: 3px solid #199c3c; }
 
-/* Chamadas finais:
-   - Home: "Se você chegou até aqui..."
-   - Serviços: "Não achou o que procurava?"
-   - Sobre: "Quer saber mais?" */
+/* Chamadas do final das páginas: "Se você chegou até aqui...", "Não achou o que procurava?" e "Quer saber mais?". */
 .chamada { text-align: center; border-top: 3px solid #199c3c; }
 
 
-/* ---------- CONTATO ---------- */
 
-/* Alinhamento das duas colunas:
-   - Página Contato: Nossos canais e Localização.
-   - Página Sobre: Quem somos e imagem da fachada. */
+
+/* Duas colunas lado a lado: Nossos canais e Localização (Contato), Quem somos e fachada (Sobre). */
 .duas-colunas { align-items: flex-start; }
 
-/* Títulos Telefone e Horário de atendimento na página Contato. */
+/* Títulos Telefone e Horário de atendimento no Contato. */
 .info-contato strong { display: block; color: #199c3c; }
 
-/* Espaçamento entre Telefone e Horário de atendimento na página Contato. */
+/* Espaço entre Telefone e Horário de atendimento. */
 .info-contato li { margin-bottom: 12px; }
 
-/* Remove o itálico padrão dos endereços da página Contato
-   e das informações de endereço presentes nos rodapés. */
+/* Tira o itálico do endereço no Contato e no rodapé. */
 address { font-style: normal; }
 
-/* Classe preparada para uma possível imagem de mapa na página Contato.
-   Não aparece nos HTML enviados atualmente. */
+/* Imagem de mapa pro Contato. Não aparece em nenhum HTML ainda. */
 .mapa-placeholder {
   width: 100%;
   height: 300px;
@@ -281,61 +241,50 @@ address { font-style: normal; }
 }
 
 
-/* ---------- RODAPÉ ---------- */
 
-/* Rodapé de todas as páginas:
-   Home, Sobre, Serviços e Contato. */
+
+/* Rodapé de todas as páginas. */
 .rodape { padding-top: 30px; border-top: 3px solid #199c3c; }
 
-/* Espaçamento abaixo das três colunas do rodapé:
-   logo e descrição, mapa do site e informações de contato. */
+/* Espaço embaixo das 3 colunas do rodapé: logo, mapa do site e contato. */
 .rodape-colunas { margin-bottom: 20px; }
 
-/* Aviso legal no final de todas as páginas:
-   AcertaCred, ano, CNPJ e direitos reservados. */
+/* Texto de baixo do rodapé: AcertaCred, ano, CNPJ e direitos reservados. */
 .rodape-legal { padding-top: 16px; padding-bottom: 16px; border-top: 1px solid rgba(255, 255, 255, 0.3); font-size: 0.8rem; }
 
 
-/* =====================================================
-   RESPONSIVIDADE - CELULARES (ATÉ 768px)
-   ===================================================== */
+
 
 @media (max-width: 768px) {
 
-  /* Exibe o botão hambúrguer no cabeçalho de todas as páginas. */
+  /* Mostra o botão da listinha no topo. */
   .btn-menu { display: block; }
 
-  /* Esconde inicialmente o menu Home, Sobre, Serviços e Contato
-     no cabeçalho de todas as páginas. */
+  /* Esconde o menu (Home, Sobre, Serviços e Contato) até clicar na listinha. */
   .menu { display: none; width: 100%; }
 
-  /* Exibe o menu quando o visitante clica no botão hambúrguer
-     e o JavaScript adiciona a classe .aberto. */
+  /* Mostra o menu quando o JavaScript coloca a classe .aberto. */
   .menu.aberto { display: block; }
 
-  /* Organiza verticalmente os links Home, Sobre, Serviços e Contato
-     quando o menu mobile é aberto. */
+  /* Links do menu um embaixo do outro. */
   .menu ul { flex-direction: column; gap: 0; }
 
-  /* Espaçamento e separação dos quatro links do menu mobile. */
+  /* Espaço e linha entre os links do menu. */
   .menu a { display: block; padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, 0.2); }
 
-  /* Reduz a logo do cabeçalho e do rodapé em telas pequenas. */
+  /* Logo menor no topo e no rodapé. */
   .logo img { height: 50px; }
 
-  /* Reduz a altura dos três slides do carrossel da Home. */
+  /* Slides do carrossel mais baixos. */
   .slide { height: 400px; }
 
-  /* Reduz o espaçamento interno das caixas de texto dos slides da Home,
-     mantendo espaço lateral para as setas de navegação. */
+  /* Caixa de texto dos slides com menos espaço, deixando lugar pras setas. */
   .slide-texto { padding: 16px 50px 36px; }
 
-  /* Reduz os títulos AcertaCred, Serviços e Quem somos
-     dentro do carrossel da Home. */
+  /* Títulos dos slides menores. */
   .slide-texto h1, .slide-texto h2 { font-size: 1.4rem; }
 
-  /* Reduz a altura da possível imagem de mapa da página Contato.
-     A classe .mapa-placeholder não está sendo utilizada atualmente. */
+  /* Imagem de mapa do Contato mais baixa. Ainda não é usada. */
   .mapa-placeholder { height: 220px; }
 
 }
